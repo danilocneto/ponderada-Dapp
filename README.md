@@ -1,5 +1,7 @@
 # Integração com MetaMask
 
+### Danilo de Castro Neto
+
 Este projeto demonstra uma DApp simples que se conecta à MetaMask, interage com um smart contract e exibe informações da carteira do usuário utilizando ethers.js.
 
 O fluxo da aplicação segue esta ordem:
