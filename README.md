@@ -67,6 +67,14 @@ Foi implementada uma funcionalidade para exibir o saldo da carteira conectada em
 O saldo é obtido diretamente da blockchain por meio do provider, convertido de wei para ETH e exibido na interface.  
 Após cada transação, o saldo é atualizado para refletir o gasto de gas ocorrido na operação.
 
+Foi adicionada a seguinte função para exibir o saldo da carteira conectada:
+
+```js
+async function atualizarSaldo(conta) {
+  const saldoWei = await provider.getBalance(conta);
+  spanSaldo.innerText = ethers.formatEther(saldoWei);
+}
+
 
 
 ## Observação
