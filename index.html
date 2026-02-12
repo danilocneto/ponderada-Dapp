@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DApp ArmazenaNumero</title>
+
+    <!-- Importar ethers.js a partir de um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.0/dist/ethers.umd.min.js"></script>
+</head>
+
+
+
+<body>
+    <h1>DApp ArmazenaNumero</h1>
+
+    <button id="btnConectar">Conectar MetaMask</button>
+    <p>
+        Conta conectada: <span id="conta"></span>
+    </p>
+
+    <hr>
+
+    <input
+        type="number"
+        id="novoNumero"
+        placeholder="Novo número"
+    >
+    <button id="btnDefinir">Definir Número</button>
+
+    <p>
+        Número atual: <span id="numeroAtual"></span>
+    </p>
+
+    Conta: <span id="conta"></span><br />
+    Saldo: <span id="saldo"></span> ETH
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+ </html>
