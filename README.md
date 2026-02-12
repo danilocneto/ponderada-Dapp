@@ -21,6 +21,11 @@ O fluxo da aplicação segue esta ordem:
 Ao clicar em Conectar MetaMask, a aplicação solicita permissão para acessar a carteira do usuário.  
 Após a autorização, o endereço da conta conectada é exibido na interface.
 
+```js
+provider = new ethers.BrowserProvider(window.ethereum);
+signer = await provider.getSigner();
+```
+
 Neste momento, também são criados o provider e o signer, que permitem à aplicação se comunicar com a blockchain e assinar transações.
 
 <div align="center">
@@ -33,7 +38,21 @@ Neste momento, também são criados o provider e o signer, que permitem à aplic
 
 Com a carteira conectada, a aplicação cria a instância do smart contract e executa a função lerNumero().
 
+```js
+contrato = new ethers.Contract(enderecoContrato, abiContrato, signer);
+
+```
+
 O valor retornado representa o estado atual armazenado no contrato e é exibido na tela como Número atual.
+
+```js
+const valor = await contrato.lerNumero();
+spanNumeroAtual.innerText = valor.toString();
+
+
+```
+
+
 
 <div align="center">
   <img src="/assets/foto4.png" width="600">
@@ -47,6 +66,14 @@ O usuário pode inserir um novo valor e clicar em Definir Número.
 Essa ação envia uma transação para a blockchain chamando a função definirNumero() do contrato.
 
 A MetaMask exibe a solicitação de transação, incluindo a estimativa de taxa de rede (gas).
+
+```js
+
+const tx = await contrato.definirNumero(novoNumero);
+await tx.wait();
+
+
+```
 
 <div align="center">
   <img src="/assets/foto3.png" width="600">
