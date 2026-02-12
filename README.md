@@ -104,6 +104,3 @@ async function atualizarSaldo(conta) {
 ```
 
 
-## Observação
-
-O código foi mantido propositalmente simples, priorizando a clareza do fluxo básico de funcionamento de uma DApp: conexão da carteira, leitura de estado, envio de transação e atualização da interface.
