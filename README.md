@@ -74,7 +74,7 @@ async function atualizarSaldo(conta) {
   const saldoWei = await provider.getBalance(conta);
   spanSaldo.innerText = ethers.formatEther(saldoWei);
 }
-
+```
 
 
 ## Observação
